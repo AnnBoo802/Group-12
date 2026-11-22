@@ -13,4 +13,13 @@ One entry per term, variable or code the project uses. Keep the canonical name, 
 | Planning day | The 1st of month M, when the plan for month M+1 is made | Date | Sales-based features may use data up to the last day of month M−1 only. |
 | MAPE | Mean absolute percentage error: average of abs(actual − forecast) / actual | % | Main metric (course). Exaggerates errors on small values (e.g. seasonal bread). |
 | MAE | Mean absolute error: average of abs(actual − forecast) | Turnover | Shown alongside MAPE. |
+| id | Row key of the sales data | `YYMMDD` + product group, e.g. 1307011 | Same format in Kaggle test/submission. Encodes the date: never use as a numeric feature. |
+| Datum | Date | `YYYY-MM-DD` | Join key for all three files. |
+| Bewoelkung | Mean daily cloud cover | Octas, 0 (clear) – 8 (overcast) | Observed weather: not known in advance. 10 missing (2017-10-30 – 11-08). |
+| Temperatur | Mean daily temperature | °C | Observed weather: not known in advance. |
+| Windgeschwindigkeit | Mean daily wind speed | Stated as m/s, integers 3–35 | Unit doubtful (35 m/s daily mean is implausible). **Not used in the project** (DECISIONS.md 2026-11-22). |
+| Wettercode | WMO present-weather code of the day | 00–99 | Missing on 669 days, mostly calm/clear days: missing ≠ random. Observed weather. |
+| KielerWoche | Kiel Week day flag | 1 in `kiwo.csv`; 0 after setting NA to 0 in the join | 9 days per year; 5 Kiel Weeks in the sales period. Known in advance. |
+| Closed day | Calendar day without any sales row | 38 days in 2013-07 – 2018-07 | 26 public holidays, 12 other days of unknown cause. |
+| Seasonal-bread season | Days on which product group 6 is sold | About 24 Oct – 6 Jan | Start and end vary by year (see fact sheet). |
 | Validation year | 2017-08-01 – 2018-07-31, used to compare models | Dates | Only one Kiel Week and one seasonal-bread season. |
