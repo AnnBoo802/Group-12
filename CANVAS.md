@@ -45,6 +45,10 @@
 
 ### 5. Data 🤖
 <!-- Sources, unit of observation, period covered, keys, known gaps. Link the data fact sheet. -->
+- Course sales cover 2013-07-01 to 2018-07-31. There are 9,334 rows keyed by date and product group, with sales on 1,819 dates and no sales rows on 38 dates within the span.
+- Kiel weather has 2,601 unique dates. Three recorded sales dates have no matching weather row. Kiel Week has 72 unique dates, of which 45 match sales dates.
+- Confectionery has 53 opening dates without a row. Seasonal bread has sales on 292 of 596 recorded opening dates in the October–January window.
+- See the [data fact sheet](docs/data-fact-sheet.md) for column ranges, missingness, join results, and proposed data decisions.
 
 ### 6. Known in advance 👤
 <!-- What information is available at the moment the result is needed? Everything else is leakage. -->
@@ -60,6 +64,8 @@
 
 ### 8. Checks 🤖
 <!-- Checkpoints and the invariants that must hold at each (row counts, keys, date ranges, IDs, baseline). Link checks/. -->
+- The [existing raw-sales checks](checks/test_raw_data.py) verify columns, row count, unique keys, product-group codes, and date range.
+- [Proposed additional checks](docs/data-fact-sheet.md#proposed-checks-for-canvas-block-8) are pending team confirmation.
 
 ---
 

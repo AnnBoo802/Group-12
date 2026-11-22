@@ -5,7 +5,14 @@ One entry per term, variable or code the project uses. Keep the canonical name, 
 | Term | Meaning | Unit / values | Notes |
 |---|---|---|---|
 | Umsatz | Turnover of one product group on one day; the forecast target | Currency not stated in source | Not a quantity in pieces. Capped by what was baked: sold-out days understate demand. |
-| Warengruppe | Product group | 1 Bread, 2 Rolls, 3 Croissants, 4 Confectionery, 5 Cakes, 6 Seasonal bread | Seasonal bread only Oct–Jan. Confectionery has no row on 53 days. |
+| Warengruppe | Product group | 1 Bread, 2 Rolls, 3 Croissants, 4 Confectionery, 5 Cakes, 6 Seasonal bread | Confectionery has no row on 53 recorded opening days. Seasonal bread has 292 rows within the Oct–Jan window. |
+| Datum | Calendar date | YYYY-MM-DD in the CSVs | Shared date column for sales, weather, and Kiel Week. |
+| id | Sales row identifier | YYMMDD plus product-group code | Unique in the sales file. |
+| Bewoelkung | Mean daily cloud cover | 0–8 octas | 0 denotes clear sky and 8 denotes overcast. |
+| Temperatur | Mean daily temperature | °C | Observed on the date. |
+| Windgeschwindigkeit | Mean daily wind speed | m/s, as documented by the course | Observed on the date. |
+| Wettercode | Code for observed weather | Whole WMO weather codes, 0–99 | 669 blank cells in the weather file. Code 0 occurs in the source. |
+| KielerWoche | Kiel Week event flag | 1 on every date in `kiwo.csv` | The source lists only event dates. |
 | Opening day | A day with sales in at least one product group | 1,819 of 1,857 days (2013-07-01 – 2018-07-31) | The 38 days without sales are mostly holidays; they are not forecast. |
 | Naive baseline | (superseded) Turnover of the same product group on the same weekday one week earlier | Turnover | Not available with monthly planning; replaced by the seasonal baseline. |
 | Seasonal baseline | Forecast = average turnover per product group × weekday × month over the training years | Turnover | The baseline to beat (block 4). |
