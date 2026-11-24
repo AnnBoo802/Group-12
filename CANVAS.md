@@ -23,6 +23,7 @@
 ### 2. Questions 👤
 <!-- The analysis questions that would change the decision. For each: what the data can answer, and what it cannot. -->
 - **Main question:** what turnover will each product group reach on a given opening day, as known on the 1st of the month before (sales up to that day available)?
+- **Hypothesis 1:** on rainy days the bakery sells less than on dry days.
 - **The data cannot answer:** quantities in pieces (only turnover); demand above what was baked (sold-out days look like low demand); cost of leftovers (no waste data); other branches (one branch only).
 - **Also cannot answer:** unplanned closures (12 non-holiday days without sales) cannot be foreseen; why confectionery has no row on 53 days is unknown.
 - **Thin evidence:** Kiel Week (5 occurrences, 2014–2018) and seasonal bread (5 seasons) rest on 5 cases each.
